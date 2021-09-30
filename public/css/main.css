@@ -72,6 +72,10 @@ h1.subtitle {
    }
 }
 
+#user-template ul.social button {
+   font-size: 16px !important;
+}
+
 #EALink {
    font-family: Montserrat, BlinkMacSystemFont, -apple-system, 'Segoe UI',
       Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
@@ -155,7 +159,7 @@ button.nav-button a {
       padding: 0px !important;
    }
    .navbar ul.social {
-      padding-top: 11px;
+      padding-top: 9px;
    }
    .container {
       padding: 0 10px;
