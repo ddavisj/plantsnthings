@@ -73,7 +73,9 @@ h1.subtitle {
 }
 
 #EALink {
-   font-family: Montserrat;
+   font-family: Montserrat, BlinkMacSystemFont, -apple-system, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', Helvetica, Arial, sans-serif;
    font-size: 20px;
    color: var(--primary);
    text-shadow: 1px 1px black;

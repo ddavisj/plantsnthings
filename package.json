@@ -2,12 +2,12 @@
     "name": "plantsnthings",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "app.js",
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bin": {
-      "tme": "index.js"
+      "tme": "app.js"
     },
     "dependencies": {
       "cookie-session": "^1.4.0",
