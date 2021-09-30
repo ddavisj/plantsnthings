@@ -36,7 +36,7 @@ module.exports = ({ products, fName }) => {
     <div id="admin-index">
       <div class="control">
         <h1 class="subtitle">Products</h1>  
-        <a href="/admin/products/new" class="button is-primary">New</a>
+        <a href="/admin/products/new" class="button is-primary">New Product</a>
       </div>
       <table class="table">
         <thead>

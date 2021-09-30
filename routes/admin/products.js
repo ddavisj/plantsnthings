@@ -10,7 +10,10 @@ const { handleErrors, requireAuth } = require('./middlewares');
 const productsIndexTemplate = require('../../views/admin/products/index');
 
 const router = express.Router();
-const upload = multer({ storage: multer.memoryStorage() });
+const upload = multer({
+   storage: multer.memoryStorage(),
+   limits: { fileSize: 12 * 1024 * 1024 }
+});
 
 router.get('/admin/products', requireAuth, async (req, res) => {
    // User first name!!

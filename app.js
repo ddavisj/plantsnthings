@@ -24,8 +24,6 @@ app.use(
    })
 );
 
-app.use(express.limit('10M'));
-
 app.use(authRouter);
 app.use(adminProductsRouter);
 app.use(productsRouter);
