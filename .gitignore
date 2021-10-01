@@ -1,2 +1,4 @@
 **/node_modules
-package-orig (w nodemon).json
+package.json
+package-production.json
+products-orig8plants.json
