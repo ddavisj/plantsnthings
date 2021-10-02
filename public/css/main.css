@@ -13,6 +13,11 @@
 }
 /* END CSS HEAD */
 
+@media (max-width: 767px) {
+   #view-item #headings {
+      text-align: center;
+   }
+}
 #view-item form {
    text-align: center;
 }

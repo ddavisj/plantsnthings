@@ -7,7 +7,8 @@ module.exports = ({ product, cartItemsExist }) => {
       content: `
       <div id="view-item" class="columns is-centered">
         <div class="column is-half">
-          <h1 class="subtitle">View Product</h1>
+        <div id="headings">
+            <h1 class="subtitle">View Product</h1>
             <div class="field">
             <label class="label">Title</label>
               <div>${product.title}</div>
@@ -16,7 +17,9 @@ module.exports = ({ product, cartItemsExist }) => {
             <div class="field">
               <label class="label">Price</label>
               <div>$${product.price}</div>
+              <p>&nbsp;</p>
             </div>
+        </div>
 
             <div class="field">
               <img src="data:image/png;base64, ${product.image}"/>
