@@ -11,6 +11,12 @@ module.exports = ({ product, errors, fName }) => {
         <div class="column is-half">
           <h1 class="subtitle">Edit a Product</h1>
 
+          ${
+             errors
+                ? '<h2 class="help is-danger">Please fix all errors below<br><br></h2>'
+                : ''
+          }
+
           <form method="POST" enctype="multipart/form-data">
             <div class="field">
               <label class="label">Title</label>
@@ -28,17 +34,17 @@ module.exports = ({ product, errors, fName }) => {
               <p class="help is-danger">${getError(errors, 'price')}</p>
             </div>
 
-            <!-- /DH/ -->
             <div class="field">
-                <img src="data:image/png;base64, ${product.image}"/>
+              <img src="data:image/png;base64, ${product.image}"/>
             </div>
-            <!-- -->
-
+                
             <div class="field">
               <label class="label">Image</label>            
               <input type="file" name="image" />
+              <p class="help is-danger">${getError(errors, 'image')}</p>
             </div>
             <br />
+
             <button class="button is-primary">Save</button>
           </form>
         </div>

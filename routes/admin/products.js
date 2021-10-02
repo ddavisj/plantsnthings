@@ -3,10 +3,20 @@ const express = require('express');
 const productsRepo = require('../../repositories/products');
 const productsNewTemplate = require('../../views/admin/products/new');
 const productsEditTemplate = require('../../views/admin/products/edit');
-
-const { requireTitle, requirePrice, requireImage } = require('./validators');
-const { uploadFile, handleErrors, requireAuth } = require('./middlewares');
 const productsIndexTemplate = require('../../views/admin/products/index');
+
+const {
+   requireImageSize,
+   requireTitle,
+   requirePrice,
+   requireImage
+} = require('./validators');
+const { handleErrors, requireAuth } = require('./middlewares');
+
+const multer = require('multer');
+const upload = multer({
+   storage: multer.memoryStorage()
+}).single('image');
 
 const router = express.Router();
 
@@ -35,10 +45,12 @@ router.post('/admin/products/:id/delete', requireAuth, async (req, res) => {
 router.post(
    '/admin/products/:id/edit',
    requireAuth,
-   // upload.single('image'),
-   uploadFile,
-   [requireTitle, requirePrice],
+   upload,
+   [requireImageSize, requireTitle, requirePrice],
    handleErrors(productsEditTemplate, async req => {
+      //so if there's an error, we want to return the current product to the fields..
+      // so add a data cb here bc we have access to the product id!! this lets us
+      // return the current product to the screen! rather than blank screen..
       const product = await productsRepo.getOne(req.params.id);
       return { product };
    }),
@@ -62,11 +74,24 @@ router.get('/admin/products/new', requireAuth, (req, res) => {
    res.send(productsNewTemplate({ errors: null, fName }));
 });
 
+// router.post(
+//    '/admin/products/new',
+//    requireAuth,
+//    upload,
+//    [requireImageSize, requireTitle, requirePrice, requireImage],
+//    handleErrors(productsNewTemplate),
+//    async (req, res) => {
+//       const image = req.file.buffer.toString('base64');
+//       const { title, price } = req.body;
+//       await productsRepo.create({ title, price, image });
+//       res.redirect('/admin/products');
+//    }
+// );
 router.post(
    '/admin/products/new',
    requireAuth,
-   uploadFile,
-   [requireTitle, requirePrice, requireImage],
+   upload,
+   [requireImageSize, requireTitle, requirePrice, requireImage],
    handleErrors(productsNewTemplate),
    async (req, res) => {
       const image = req.file.buffer.toString('base64');

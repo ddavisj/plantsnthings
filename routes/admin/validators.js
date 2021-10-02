@@ -1,6 +1,8 @@
 const { check } = require('express-validator');
 const usersRepo = require('../../repositories/users');
 
+const maxFileSize = 0.1; // MB
+
 module.exports = {
    // note: these are fn calls stored as obj (module.exports) props
    requirePhoneNo: check('phone')
@@ -16,10 +18,6 @@ module.exports = {
       .isLength({ min: 1, max: 20 })
       .withMessage('Please enter your name'),
    requireUrl: check('link').trim().isURL().withMessage('Not a valid URL'),
-   requireLadyName: check('name')
-      .trim()
-      .isLength({ min: 1, max: 20 })
-      .withMessage('Name is required (max 20 chars)'),
    requireFirstName: check('fName')
       .trim()
       .isLength({ min: 1, max: 20 })
@@ -27,6 +25,11 @@ module.exports = {
    requireImage: check('image').custom(async (image, { req }) => {
       if (!req.file) {
          throw new Error('Image is required');
+      }
+   }),
+   requireImageSize: check('image').custom(async (image, { req }) => {
+      if (req.file && req.file.size > maxFileSize * 1024 * 1024) {
+         throw new Error(`File must be smaller than ${maxFileSize}MB`);
       }
    }),
    requireTitle: check('title')

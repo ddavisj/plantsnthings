@@ -1,4 +1,4 @@
-module.exports = ({ content, fName, pageTitle }) => {
+module.exports = ({ content, fName = 'David', pageTitle }) => {
    if (fName.length > 10) {
       fName = fName.slice(0, 10).trim() + '..';
    }
