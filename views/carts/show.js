@@ -14,7 +14,7 @@ module.exports = ({ items }) => {
          return `
         <div class="cart-item message">
           <figure>
-            <img src="data:image/png;base64, ${item.product.image}" />
+            <a href="/${item.id}/viewitem"><img src="data:image/png;base64, ${item.product.image}" /></a>
           </figure>
           <h3 class="subtitle">${item.product.title}</h3>
           <div class="cart-right">

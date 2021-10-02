@@ -13,6 +13,10 @@
 }
 /* END CSS HEAD */
 
+#view-item form {
+   text-align: center;
+}
+
 body {
    overflow-x: hidden;
 }
