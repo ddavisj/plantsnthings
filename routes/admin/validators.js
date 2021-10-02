@@ -1,7 +1,7 @@
 const { check } = require('express-validator');
 const usersRepo = require('../../repositories/users');
 
-const maxFileSize = 0.1; // MB
+const maxFileSize = 0.7; // MB
 
 module.exports = {
    // note: these are fn calls stored as obj (module.exports) props
