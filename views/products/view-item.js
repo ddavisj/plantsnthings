@@ -1,6 +1,6 @@
 const layout = require('../layout');
 
-module.exports = ({ product, cartItemsExist }) => {
+module.exports = ({ product, cartItemsExist, nextProductId }) => {
    return layout({
       cartItemsExist,
       pageTitle: 'View Item | ',
@@ -8,25 +8,21 @@ module.exports = ({ product, cartItemsExist }) => {
       <div id="view-item" class="columns is-centered">
         <div class="column is-half">
         <div id="headings">
-            <h1 class="subtitle">View Product</h1>
-            <div class="field">
-            <label class="label">Title</label>
-              <div>${product.title}</div>
-            </div>
-            
-            <div class="field">
-              <label class="label">Price</label>
-              <div>$${product.price}</div>
-              <p>&nbsp;</p>
-            </div>
+            <h1 class="subtitle">${product.title}</h1>
+            <h3>$${product.price}</h3>
+            <p>&nbsp;</p>
         </div>
 
             <div class="field">
               <img src="data:image/png;base64, ${product.image}"/>
             </div>
                 
-            <br />
+            <div id="next-product">
+                <a style="color: var(--primary)" href="/${nextProductId}/viewitem"><b>Next > </b></a>
+            </div>
 
+            <br />
+            
             <form action="/cart/products" method="POST">
                 <input hidden value="${product.id}" name="productId"/>
             
