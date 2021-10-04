@@ -18,6 +18,10 @@ div#next-product {
    padding-right: 20px;
 }
 
+#homepage .card-content {
+   text-align: center;
+}
+
 #view-item .column.is-half {
    width: unset;
 }
@@ -43,6 +47,9 @@ body {
 }
 
 @media (min-width: 768px) {
+   #homepage .card.product-card figure {
+      padding-top: 35px;
+   }
    #spacer {
       width: 35%;
    }

@@ -8,7 +8,22 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(
+   express.static('public', {
+      // etag: true, // Just being explicit about the default.
+      // lastModified: true,  // Just being explicit about the default.
+      setHeaders: (res, path) => {
+         if (path.endsWith('.html')) {
+            // All of the project's HTML files end in .html
+            res.setHeader('Cache-Control', 'no-cache');
+         }
+         if (path.includes('.css')) {
+            res.setHeader('Cache-Control', 'max-age=600');
+         }
+      }
+   })
+);
 
 const authRouter = require('./routes/admin/auth');
 const adminProductsRouter = require('./routes/admin/products');
