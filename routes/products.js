@@ -42,17 +42,30 @@ router.get('/:id/viewitem', async (req, res) => {
 
    const products = await productsRepo.getAll();
    const productIndex = products.findIndex(item => item.id === req.params.id);
+
    const nextProductId =
-      productIndex < products.length - 1
-         ? products[productIndex + 1].id
-         : products[0].id;
+      productIndex === products.length - 1 // ie. last in the array
+         ? products[0].id // go to first
+         : products[productIndex + 1].id; // go to next
+
+   const prevProductId =
+      productIndex === 0 // ie. first in the array
+         ? products[products.length - 1].id // go to last
+         : products[productIndex - 1].id; // go to prev
 
    const cart = await cartsRepo.getOne(req.session.cartId);
    let cartItemsExist;
    if (cart && cart.items.length) {
       cartItemsExist = true;
    }
-   res.send(productsViewItem({ product, cartItemsExist, nextProductId }));
+   res.send(
+      productsViewItem({
+         product,
+         cartItemsExist,
+         prevProductId,
+         nextProductId
+      })
+   );
 });
 
 module.exports = router;

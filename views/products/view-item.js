@@ -1,6 +1,11 @@
 const layout = require('../layout');
 
-module.exports = ({ product, cartItemsExist, nextProductId }) => {
+module.exports = ({
+   product,
+   cartItemsExist,
+   prevProductId,
+   nextProductId
+}) => {
    return layout({
       cartItemsExist,
       pageTitle: 'View Item | ',
@@ -13,24 +18,19 @@ module.exports = ({ product, cartItemsExist, nextProductId }) => {
             <p>&nbsp;</p>
         </div>
 
-            <div class="field">
+            <div class="field slider" style="position:relative">
               <img src="data:image/png;base64, ${product.image}"/>
+              <div class="prev"><a href="/${prevProductId}/viewitem"> < </a></div>
+              <div class="next"><a href="/${nextProductId}/viewitem"> > </a></div>
             </div>
-                
-            <div id="next-product">
-                <a style="color: var(--primary)" href="/${nextProductId}/viewitem"><b>Next > </b></a>
-            </div>
-
-            <br />
             
             <form action="/cart/products" method="POST">
                 <input hidden value="${product.id}" name="productId"/>
-            
+                <br>
                 <button class="button is-primary"">
                     <i class="fa fa-shopping-cart"></i>&nbsp; Add to cart
                 </button>
             </form>
-            
         </div>
     </div>
     `

@@ -13,6 +13,41 @@
 }
 /* END CSS HEAD */
 
+#view-item .slider a {
+   color: var(--primary);
+   padding: 20px;
+   transition: background-color 0.6s ease;
+   border-radius: 10px;
+   font-size: 25px;
+}
+#view-item .slider a:hover {
+   background-color: rgba(0, 0, 0, 0.8);
+}
+#view-item .prev,
+#view-item .next {
+   position: absolute;
+   top: calc(50% - 40px);
+}
+#view-item .next {
+   right: 20px;
+}
+#view-item .prev {
+   left: 20px;
+}
+#view-item .slider {
+   display: flex;
+   justify-content: center;
+}
+
+.admin .column.is-one-quarter {
+   max-width: 250px;
+   margin: auto;
+}
+
+.admin .column.is-one-quarter {
+   width: unset;
+}
+
 div#next-product {
    text-align: right;
    padding-right: 20px;
@@ -281,10 +316,15 @@ html {
    overflow-x: unset !important;
 }
 
+#user-template .banner .columns.is-centered {
+   margin-bottom: unset;
+}
+
 @media (min-width: 1600px) {
    #user-template .banner img {
       border-radius: 25px;
       margin-top: 30px;
+      /* max-height: 150px; */
    }
 }
 
