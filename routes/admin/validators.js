@@ -1,7 +1,7 @@
 const { check } = require('express-validator');
 const usersRepo = require('../../repositories/users');
 
-const maxFileSize = 0.7; // MB
+const maxFileSize = 7; // MB
 
 module.exports = {
    // note: these are fn calls stored as obj (module.exports) props
@@ -34,8 +34,8 @@ module.exports = {
    }),
    requireTitle: check('title')
       .trim()
-      .isLength({ min: 5, max: 40 })
-      .withMessage('Must be between 5 and 40 chars'),
+      .isLength({ min: 3, max: 40 })
+      .withMessage('Must be between 3 and 40 chars'),
    requirePrice: check('price')
       .trim()
       .toFloat()
