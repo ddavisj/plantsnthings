@@ -6,5 +6,6 @@ package-prod.json
 package-production.json
 products-orig8plants.json
 carts.json
-users.json
 products-modded.json
+
+app.js
