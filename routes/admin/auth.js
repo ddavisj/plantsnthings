@@ -9,7 +9,7 @@ const {
    requirePassword,
    requirePasswordConfirmation,
    requireEmailExists,
-   requireValidPasswordForUser
+   requireValidPasswordForUser,
 } = require('./validators');
 const { handleErrors } = require('./middlewares');
 
@@ -25,13 +25,13 @@ router.post(
       requireFirstName,
       requireEmail,
       requirePassword,
-      requirePasswordConfirmation
+      requirePasswordConfirmation,
    ],
    handleErrors(signupTemplate),
    async (req, res) => {
       const { fName, email, password, passwordConfirmation } = req.body;
       const user = await usersRepo.create({ fName, email, password });
-      // Store the id of that user inside the user cookie
+      // Store the user id inside the user cookie
       req.session.userId = user.id;
       // res.redirect('/admin/products'); ?? redirect to products page? normally, want browser to save info.. so go to signin..
       res.redirect('/signin');
