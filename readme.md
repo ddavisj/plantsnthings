@@ -8,13 +8,13 @@ This app was adapted from a [Udemy course](https://www.udemy.com/course/javascri
 
 # Node Modules
 
--  express 4.17.1
+-  express 4.17.1 -
    A full featured web server built for NodeJS
 -  cookie-session 1.4.0
    Allows us to store session cookies
--  express-validator 6.12.1
+-  express-validator 6.12.1 -
    A set of express.js middlewares that wraps validator.js validator and sanitizer functions.
--  multer 1.4.3
+-  multer 1.4.3 -
    Parses input fields and allows us to upload images
--  nodemon 2.0.12
+-  nodemon 2.0.12 -
    A module that watches for changes made to files in a project, and restarts as necessary.
