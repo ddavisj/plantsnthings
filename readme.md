@@ -22,9 +22,13 @@ This app was adapted from a [Udemy course](https://www.udemy.com/course/javascri
 # Main Folders
 
 Public: Holds all files that the project needs to be loaded and available to the public, eg. css files, image banners, logos etc.
+
 Repositories: The server. Repositories exist for each of the data record types to be stored, eg. products, users and carts.
+
 Routes: Route files were created for each of the different sets of urls required. These routes set how these urls work, and what templates each different endpoint/url loads.
+
 Templates: Two html templates have been created for this project - one for the front-end user pages, and another for the admin control panel. These provide the basic html required by each set of pages.
+
 Views: These are loaded for specific routes as required. Template strings allow the insertion of dynamic content for each view.
 
 # Additional Files
