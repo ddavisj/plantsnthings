@@ -1,4 +1,6 @@
-module.exports = ({ content, fName = 'David', pageTitle }) => {
+// Admin layout
+module.exports = ({ content, fName, pageTitle }) => {
+   // Limit first name display (mainly for mobiles) - TODO: Could limit firstname when registering!
    if (fName.length > 10) {
       fName = fName.slice(0, 10).trim() + '..';
    }

@@ -176,6 +176,9 @@ button.nav-button a {
 }
 
 @media (min-width: 768px) {
+   #user-template input {
+      max-width: 70%;
+   }
    #admin-logo img {
       width: 35%;
    }

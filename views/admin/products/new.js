@@ -1,3 +1,5 @@
+// Show new product page
+
 const layout = require('../layout');
 const { getError } = require('../../helpers');
 
@@ -39,6 +41,6 @@ module.exports = ({ errors, fName }) => {
           </form>
         </div>
       </div>
-    `
+    `,
    });
 };

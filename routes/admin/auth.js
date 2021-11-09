@@ -37,18 +37,19 @@ router.get('/signup', (req, res) => {
 // .. then destructure fields from the req body and pass them to our repo to create the user..
 router.post(
    '/signup',
+   // Run all validators
    [
       requireFirstName,
       requireEmail,
       requirePassword,
       requirePasswordConfirmation,
    ],
-   handleErrors(signupTemplate),
+   handleErrors(signupTemplate), // If there are errors, returns the template, else, runs next()..
    async (req, res) => {
       const { fName, email, password, passwordConfirmation } = req.body;
       const user = await usersRepo.create({ fName, email, password });
       // Store the user id inside the user cookie
-      // Disabled! User needs to log in after signing up.. req.session.userId = user.id;
+      // User needs to log in after signing up..
       // Could redirect to products page but we want browser to save info.. so go to signin..
       res.redirect('/signin');
    }
@@ -60,7 +61,7 @@ router.get('/signout', (req, res) => {
    res.redirect('/');
 });
 
-// Sign In Page - Pass in errors: null for get request..
+// Admin sign In Page - Pass in errors: null for get request..
 router.get('/signin', (req, res) => {
    res.send(signinTemplate({ errors: null }));
 });
@@ -70,9 +71,9 @@ router.post(
    [requireEmailExists, requireValidPasswordForUser],
    handleErrors(signinTemplate),
    async (req, res) => {
-      const { email, password } = req.body;
-      const user = await usersRepo.getOneBy({ email });
-      req.session.userId = user.id;
+      const { email } = req.body; // Destructure reqd params from req.body
+      const user = await usersRepo.getOneBy({ email }); // Load user from repo
+      req.session.userId = user.id; // Set user cookie
 
       // Store First Name in cookie! So avail to all pages
       req.session.fName = user.fName;

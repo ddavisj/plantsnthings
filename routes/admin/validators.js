@@ -1,10 +1,11 @@
 const { check } = require('express-validator');
 const usersRepo = require('../../repositories/users');
 
-const maxFileSize = 7; // MB
+const maxFileSize = 7; // Max file size that can be uploaded in MB
 
 module.exports = {
-   // note: these are fn calls stored as obj (module.exports) props
+   // Most validators are standard but we can add custom cbs that allow us to check additional properties
+   // Note: Validators are fn calls stored as obj (module.exports) props
    requirePhoneNo: check('phone')
       .trim()
       .isNumeric()
@@ -91,5 +92,5 @@ module.exports = {
             throw new Error('Passwords must match');
          }
          return true;
-      })
+      }),
 };

@@ -1,17 +1,19 @@
-const layout = require('../layout');
+const layout = require('../layout'); // Load the admin layout
 
 const { getError } = require('../../helpers');
 
+// Pass in fName so user can see they're logged in.. TODO - Q: Can we use cookie for this?
 module.exports = ({ product, errors, fName }) => {
    return layout({
       fName,
-      pageTitle: 'Edit Product | ',
+      pageTitle: 'Edit Product | ', // SEO!
       content: `
       <div class="columns is-centered">
         <div class="column is-half">
           <h1 class="subtitle">Edit a Product</h1>
 
           ${
+             // Show errors is exist - ternary operator within template string
              errors
                 ? '<h2 class="help is-danger">Please fix all errors below<br><br></h2>'
                 : ''
@@ -49,6 +51,6 @@ module.exports = ({ product, errors, fName }) => {
           </form>
         </div>
       </div>
-    `
+    `,
    });
 };

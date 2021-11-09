@@ -1,3 +1,5 @@
+// Layout for all control panel pages
+
 module.exports = ({ content, pageTitle }) => {
    return `
        <!DOCTYPE html>

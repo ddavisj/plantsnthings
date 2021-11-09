@@ -1,8 +1,11 @@
-const layout = require('../layout');
+const layout = require('../layout'); // Load the admin layout
 
 module.exports = ({ products, fName }) => {
+   // Create an html string with all products joined together
+   // Products here is an array
    const renderedProducts = products
       .map(product => {
+         // Map individual items in the array into the following html template string
          return `
         <tr>
          <td>
@@ -30,6 +33,7 @@ module.exports = ({ products, fName }) => {
       .join('');
 
    return layout({
+      // Add products above within the content string, all within the admin layout
       pageTitle: 'Products | ',
       fName,
       content: `
@@ -54,6 +58,6 @@ module.exports = ({ products, fName }) => {
       </table>
     </div>
     <style>#products {color: black !important}
-    `
+    `,
    });
 };

@@ -1,4 +1,7 @@
+// Front-end user layout (cf admin layout)
+
 module.exports = ({ content, cartItemsExist, templateCss, pageTitle }) => {
+   // Only show cart icon if items exist
    const renderCartLink =
       cartItemsExist === true
          ? `<div class="navbar-item">

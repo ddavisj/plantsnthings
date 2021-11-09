@@ -1,14 +1,22 @@
-const layout = require('../layout');
+// Show shopping cart
+
+const layout = require('../layout'); // Load user layout
 
 module.exports = ({ items }) => {
+   // Loop through cart items and sum total values
    const totalPrice = items.reduce((total, item) => {
       return total + item.quantity * item.product.price;
    }, 0);
+
+   // Loop through items and sum quantity of items
    const noOfItems = items.reduce((totalItems, item) => {
       return totalItems + item.quantity;
    }, 0);
+
+   // Standard format for price (allows us to add commas eg. $2,500)
    const formattedPrice = new Intl.NumberFormat().format(totalPrice);
 
+   // Show items in cart on separate lines.. map all items in the user's cart and join html strings
    const renderedItems = items
       .map(item => {
          return `
@@ -66,6 +74,6 @@ module.exports = ({ items }) => {
       <style>.footer {display:none}
       a#cart {color: black}
       </style>
-    `
+    `,
    });
 };
