@@ -1,7 +1,7 @@
 const layout = require('./auth-layout');
 const { getError } = require('../../helpers');
 
-module.exports = ({ req, errors }) => {
+module.exports = ({ errors }) => {
    return layout({
       pageTitle: 'Sign Up',
       content: `
@@ -43,6 +43,6 @@ module.exports = ({ req, errors }) => {
           </div>
         </div>
       </div>
-    `
+    `,
    });
 };

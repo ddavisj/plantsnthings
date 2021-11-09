@@ -11,10 +11,8 @@ module.exports = ({ content, fName = 'David', pageTitle }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>${pageTitle}Plants 'n Things</title>
           <link href="/css/main.css" rel="stylesheet"></link>
-          <link href="/css/all.min.css" rel="stylesheet">
-          <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
-          <link href="/css/bulma.min.css" rel="stylesheet">
-          <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link> -->
+          <link href="/css/all.min.css" rel="stylesheet"></link>
+          <link href="/css/bulma.min.css" rel="stylesheet"></link>
           <style>
           .navbar-item a {
             padding-right: 20px;

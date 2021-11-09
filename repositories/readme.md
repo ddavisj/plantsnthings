@@ -6,7 +6,11 @@ All repository files export an instance of the repo, with a filename passed in t
 
 # repository.js
 
-This contains the code that sets out how records are created, read, updated, and deleted.
+This contains the code that sets out how records are created, read, updated, and deleted. This repo is the parent class for all other repository classes. Note - unlike the other repos, this file does not export an instance of a class but the class itself.
+
+## Other Repos
+
+The other repos export an instance of the class, complete with a filename passed in. This avoids errors where filenames are incorrectly spelled or given different names if they were instantiated in eg. route files.
 
 # carts.js / products.js
 

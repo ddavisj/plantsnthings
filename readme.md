@@ -1,6 +1,6 @@
 ## Introduction
 
-This app was adapted from a [Udemy course](https://www.udemy.com/course/javascript-beginners-complete-tutorial/). It's a plant shop, built with a custom Node server, Express and html templates. Node modules provide functionality, including the ability to set cookies so users can add items to a cart without having to sign in as well as form validation. Encryption also allows admins to securely create an account, add products and upload images. All product data, users, shopping carts and product images are stored in JSON files.
+This app was adapted from a [Udemy course](https://www.udemy.com/course/javascript-beginners-complete-tutorial/). It's a plant shop, built with a custom Node server, Express and html templates. Node modules provide functionality, such as the ability to set cookies so users can add items to a cart without having to sign, and form validation. An encryption module allows admins to securely create an account, add products and upload images. All product data, users, shopping carts and product images are stored in JSON files.
 
 # Main Technologies
 
@@ -11,23 +11,23 @@ This app was adapted from a [Udemy course](https://www.udemy.com/course/javascri
 # Node Modules
 
 -  cookie-session 1.4.0 -
-   Allows us to store session cookies
+   Allows storing of session cookies
 -  express-validator 6.12.1 -
-   A set of express.js middlewares that wraps validator and sanitizer functions
+   A set of express.js middleware that wraps validator and sanitizer functions
 -  multer 1.4.3 -
-   Parses input fields and allows for the upload of images
+   Parses input fields and allows for file and image uploads
 -  nodemon 2.0.12 -
-   A module that watches for changes made to files in a project, and restarts as necessary
+   Watches for changes made to files in a project, and restarts as necessary
 
 # Main Folders
 
-Public: Holds all files that the project needs to be loaded and available to the public, eg. css files, image banners, logos etc.
+Public: Holds all public, non-JS, files and images that the project needs, eg. css files, banners, logos etc.
 
-Repositories: The server. Repositories exist for each of the data record types to be stored, eg. products, users and carts.
+Repositories: The server. Separate repositories exist for each of the data records, eg. products, users and carts.
 
-Routes: Files created for each of the different sets of urls required. These routes set how these urls work, and what templates and views each different endpoint/url loads.
+Routes: Files created for each of the different sets of urls required. Routes set out how these urls work, what templates and views are loaded.
 
-Templates: Two html templates have been created for this project - one for the front-end user pages, and another for the admin control panel. These provide the basic html required by each set of pages.
+Templates: Two html templates have been created for this project - one for front-end user pages, and another for the admin panel. Templates provide the basic html required by each set of pages.
 
 Views: These are loaded for specific routes as required. Template strings allow the insertion of dynamic content for each view.
 

@@ -19,5 +19,5 @@ module.exports = {
          return res.redirect('/signin');
       }
       next();
-   }
+   },
 };

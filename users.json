@@ -4,5 +4,41 @@
     "email": "info@plantsnthings.com",
     "password": "fbd5d256c4ac5171e5c7d624e23c34d05fb62e2553888161643abab9aa7f9613649b6a3d825568b4b31388f7a2096ac10821aee4f5f97250dd94d36b8e07f92d.426de11a4e304059",
     "id": "738665e2"
+  },
+  {
+    "fName": "Stanley",
+    "email": "info2@plantsnthings.com",
+    "password": "90b22bb9fc43fdde0fc29a2dc298b18aafbab2a54998f95ae67c9ca9fb921e3ba9c465b570312f158cd7fd68685e5ed8b1dd13f9041184503d91660cc7124fbc.2e941d35300e4529",
+    "id": "e1a0ec8b"
+  },
+  {
+    "fName": "Stanley3",
+    "email": "info3@plantsnthings.com",
+    "password": "8adcd01c535be9ab5ce170742c8fe67a73f375ca47fdcc7a33caa59a9f315c49c84a98e1c07e589a2dd964227792136e24a8002189476bcfee49cf4c2ab84213.42d1327efdce781e",
+    "id": "2ef00f36"
+  },
+  {
+    "fName": "Stan4",
+    "email": "info4@plantsnthings.com",
+    "password": "e1f48ccfd036af39908befd90ffcb73d2b10d35a505a95173629c5591d342c061e88deea7ed02bd111ab7a5103552dc7d021045f17d1934ab3c61987e3050ac8.21c06f5f4dcdd67d",
+    "id": "c2bba74d"
+  },
+  {
+    "fName": "Stan5",
+    "email": "info5@plantsnthings.com",
+    "password": "d8850ddddf3d447e2a7f4f96d2a0f89b8844bc5c748c3ae047de6a12d93deca2bbd1094996a41f33f1c94a87423a9388622b8f2d1d7b1b61fbab42ce2390455e.b7d44200d2770560",
+    "id": "d9b2f96b"
+  },
+  {
+    "fName": "Stan6",
+    "email": "info6@plantsnthings.com",
+    "password": "66a9e34a9a780068a26706f4b33b0ca70678895db3a6c882d662ec5beb35183dbb78a5f122496134a05f50549d2ec65b72e0537c7bb7a4a0bd41cc237cfe5a74.3fb67522a404608f",
+    "id": "06e451ae"
+  },
+  {
+    "fName": "Stan7",
+    "email": "info7@plantsnthings.com",
+    "password": "be432c81a97e7c091d00c2e5817db24d656482ab7f9228fa80677f3bfae4f03c68539480f38a9c4c0a4bb8624297f06a35c936a3778b225193dde4692bda37ab.0f7f160af4d17e21",
+    "id": "947971db"
   }
 ]
